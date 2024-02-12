@@ -30,8 +30,19 @@ struct SnippetEditView: View {
     var body: some View {
         VStack {
             Form {
-                TextField("Snippet Name", text: $snippet.name)
-                TextField("Snippet", text: $snippet.codeSnip)
+                Section {
+                    TextField("Snippet Name", text: $snippet.name)
+                        .disableAutocorrection(true)
+                } header: {
+                    Text("Name")
+                }
+                Section {
+                    TextField("Snippet", text: $snippet.codeSnip, axis: .vertical)
+                        .disableAutocorrection(true)
+                        .textInputAutocapitalization(.never)
+                } header: {
+                    Text("Code Snippet")
+                }
             }
             
             HStack {

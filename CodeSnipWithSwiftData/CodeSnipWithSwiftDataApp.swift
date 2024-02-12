@@ -25,7 +25,9 @@ struct CodeSnipWithSwiftDataApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                SnippetListView()
+            }
         }
         .modelContainer(sharedModelContainer)
     }
