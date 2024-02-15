@@ -28,6 +28,8 @@ struct SnippetEditView: View {
     var save: (Snippet) -> ()
     var delete: (Snippet) -> ()
     @Environment(\.dismiss) var dismiss
+    @Query private var tags: [Tag]
+    @State private var selectedTag: Tag?
     
     var body: some View {
         VStack {
@@ -39,10 +41,31 @@ struct SnippetEditView: View {
                     Text("Name")
                 }
                 Section {
+                    HStack {
+                        Picker("Add a Tag", selection: $selectedTag) {
+                            Text("-")
+                                .tag(nil as Tag?)
+                            ForEach(tags) { tag in
+                                Text(tag.name)
+                                    .tag(tag as Tag?)
+                            }
+                        }
+                        Button {
+                            if let tag = selectedTag {
+                                print("Adding Tag")
+                                addTag(tag)
+                                selectedTag = nil
+                            }
+                        } label: {
+                            Text("Add Tag")
+                        }
+                    }
                     ForEach(snippet.tags) { tag in
                         Text(tag.name)
+                            .onTapGesture {
+                                removeTag(tag)
+                            }
                     }
-                    
                 } header: {
                     Text("Tags")
                 }
@@ -73,6 +96,19 @@ struct SnippetEditView: View {
                 Spacer()
             }.buttonStyle(.bordered)
         }
+    }
+}
+
+extension SnippetEditView {
+    private func addTag(_ tag: Tag) {
+        print("Attempting Add Tag")
+        snippet.tags.append(tag)
+    }
+    private func removeTag(_ tag: Tag) {
+        if let index = snippet.tags.firstIndex(of: tag) {
+            snippet.tags.remove(at: index)
+        }
+//        snippet.tags.delete(tag)
     }
 }
 
