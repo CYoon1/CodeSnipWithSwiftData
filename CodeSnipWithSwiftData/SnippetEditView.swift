@@ -13,11 +13,13 @@ class Snippet {
     var id = UUID()
     var name = ""
     var codeSnip = ""
+    var tags: [Tag]
     
-    init(id: UUID = UUID(), name: String = "", codeSnip: String = "") {
+    init(id: UUID = UUID(), name: String = "", codeSnip: String = "", tags: [Tag] = []) {
         self.id = id
         self.name = name
         self.codeSnip = codeSnip
+        self.tags = tags
     }
 }
 
@@ -35,6 +37,14 @@ struct SnippetEditView: View {
                         .disableAutocorrection(true)
                 } header: {
                     Text("Name")
+                }
+                Section {
+                    ForEach(snippet.tags) { tag in
+                        Text(tag.name)
+                    }
+                    
+                } header: {
+                    Text("Tags")
                 }
                 Section {
                     TextField("Snippet", text: $snippet.codeSnip, axis: .vertical)
@@ -67,7 +77,7 @@ struct SnippetEditView: View {
 }
 
 #Preview {
-    let example = Snippet(name: "Test", codeSnip: "print(\"hello world\")")
+    let example = Snippet(name: "Test", codeSnip: "print(\"hello world\")", tags: [])
     return NavigationStack {
         SnippetEditView(snippet: example, save: { _ in }, delete: { _ in })
     }

@@ -14,6 +14,8 @@
 		D845F3352B7AB4380038BA6C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D845F3342B7AB4380038BA6C /* Preview Assets.xcassets */; };
 		D845F33E2B7AB4ED0038BA6C /* SnippetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845F33D2B7AB4ED0038BA6C /* SnippetEditView.swift */; };
 		D845F3402B7AB6D30038BA6C /* SnippetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845F33F2B7AB6D30038BA6C /* SnippetListView.swift */; };
+		D8E0E6312B7C66C100575434 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E0E6302B7C66C100575434 /* TagListView.swift */; };
+		D8E0E6332B7C6B0D00575434 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E0E6322B7C6B0D00575434 /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		D845F3372B7AB4380038BA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D845F33D2B7AB4ED0038BA6C /* SnippetEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetEditView.swift; sourceTree = "<group>"; };
 		D845F33F2B7AB6D30038BA6C /* SnippetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetListView.swift; sourceTree = "<group>"; };
+		D8E0E6302B7C66C100575434 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		D8E0E6322B7C6B0D00575434 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				D845F32D2B7AB4360038BA6C /* ContentView.swift */,
 				D845F33D2B7AB4ED0038BA6C /* SnippetEditView.swift */,
 				D845F33F2B7AB6D30038BA6C /* SnippetListView.swift */,
+				D8E0E6302B7C66C100575434 /* TagListView.swift */,
+				D8E0E6322B7C6B0D00575434 /* ContainerView.swift */,
 				D845F32F2B7AB4360038BA6C /* Item.swift */,
 				D845F3312B7AB4380038BA6C /* Assets.xcassets */,
 				D845F3362B7AB4380038BA6C /* CodeSnipWithSwiftData.entitlements */,
@@ -151,9 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D845F33E2B7AB4ED0038BA6C /* SnippetEditView.swift in Sources */,
+				D8E0E6312B7C66C100575434 /* TagListView.swift in Sources */,
 				D845F32E2B7AB4360038BA6C /* ContentView.swift in Sources */,
 				D845F3402B7AB6D30038BA6C /* SnippetListView.swift in Sources */,
 				D845F3302B7AB4360038BA6C /* Item.swift in Sources */,
+				D8E0E6332B7C6B0D00575434 /* ContainerView.swift in Sources */,
 				D845F32C2B7AB4360038BA6C /* CodeSnipWithSwiftDataApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ import SwiftData
 struct CodeSnipWithSwiftDataApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self, Snippet.self
+            Item.self, Snippet.self, Tag.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -26,7 +26,7 @@ struct CodeSnipWithSwiftDataApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                SnippetListView()
+                ContainerView()
             }
         }
         .modelContainer(sharedModelContainer)
